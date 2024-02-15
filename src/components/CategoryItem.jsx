@@ -17,7 +17,7 @@ import { Link as ReactRouterLink } from 'react-router-dom'
 
 export default function CategoryItem(props) {
     const { idCategory, strCategory, strCategoryThumb, strCategoryDescription } = props
-    return <Card maxW='sm'>
+    return <Card bg={'#F6F4FB'} maxW='sm'>
         <CardBody>
             <Image
                 src={strCategoryThumb}
@@ -36,7 +36,7 @@ export default function CategoryItem(props) {
         </CardBody>
         <Divider />
         <CardFooter>
-            <Button variant='solid' colorScheme='blue'>
+            <Button variant='solid' colorScheme='purple' bg={'#1A263D'}>
                 <ChakraLink>Watch Category</ChakraLink>
             </Button>
         </CardFooter>
