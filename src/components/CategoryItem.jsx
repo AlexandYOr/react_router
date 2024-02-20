@@ -6,17 +6,16 @@ import {
     Text,
     Heading,
     Link as ChakraLink,
-    LinkProps,
     Divider,
     Button,
     Image,
     Tooltip
 } from '@chakra-ui/react'
-import { Link as ReactRouterLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 export default function CategoryItem(props) {
-    const { idCategory, strCategory, strCategoryThumb, strCategoryDescription } = props
+    const {strCategory, strCategoryThumb, strCategoryDescription } = props
     return <Card bg={'#F6F4FB'} maxW='sm'>
         <CardBody>
             <Image
@@ -36,9 +35,11 @@ export default function CategoryItem(props) {
         </CardBody>
         <Divider />
         <CardFooter>
-            <Button variant='solid' colorScheme='purple' bg={'#1A263D'}>
-                <ChakraLink>Watch Category</ChakraLink>
-            </Button>
+            <ChakraLink as={Link} to={`/category/${strCategory}`}>
+                <Button variant='solid' colorScheme='purple' bg={'#1A263D'}>
+                        Watch category
+                </Button>
+            </ChakraLink>
         </CardFooter>
     </Card>
 }
