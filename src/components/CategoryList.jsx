@@ -1,5 +1,4 @@
 import { Stack } from "@chakra-ui/react"
-
 import CategoryItem from "./CategoryItem"
 
 export default function CategoryList({ catalog = [] }) {
@@ -8,4 +7,5 @@ export default function CategoryList({ catalog = [] }) {
             <CategoryItem key={el.idCategory} {...el} />
         ))}
     </Stack>
+   
 }

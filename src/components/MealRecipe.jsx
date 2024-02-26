@@ -15,11 +15,11 @@ export default function MealRecipe(props) {
         let newElem
         for (const key in props) {
             if (key.includes('strMeasure' + (i + 1)) && props[key]) {
-                console.log(el, i, props[key])
                 newElem =  el + ': ' + props[key]
-                return ingredientsValue.push(newElem)
+                
             }
         }
+        return ingredientsValue.push(newElem)
     })
 
 
@@ -31,19 +31,19 @@ export default function MealRecipe(props) {
             templateColumns='repeat(5, 1fr)'
             gap={4}
         >
-            <GridItem rowSpan={2} colSpan={1} bg='tomato'>
+            <GridItem rowSpan={2} colSpan={1} bg={'#F6F4FB'}>
                 <Image src={strMealThumb} objectFit={'cover'} boxSize={'100%'} />
             </GridItem>
-            <GridItem colSpan={2} bg='papayawhip'>
-                <Text>Meal:{strMeal}</Text>
-                <Text>Category:{strCategory}</Text>
-                <Text>Country of origin:{strArea}</Text>
+            <GridItem colSpan={2} bg={'#F6F4FB'}>
+                <Text>Meal: {strMeal}</Text>
+                <Text>Category: {strCategory}</Text>
+                <Text>Country of origin: {strArea}</Text>
                 {strYoutube ? <Text>Cooking video: <Link>{strYoutube}</Link></Text> : ''}
             </GridItem>
-            <GridItem colSpan={2} bg='papayawhip'>
+            <GridItem colSpan={2} bg={'#F6F4FB'}>
                 <h2>{ingredientsValue.join(', ')}</h2>
             </GridItem>
-            <GridItem colSpan={4} bg='tomato'><Text>{strInstructions}</Text></GridItem>
+            <GridItem colSpan={4} bg={'#F6F4FB'}><Text>{strInstructions}</Text></GridItem>
         </Grid>
     </Stack>
 }
